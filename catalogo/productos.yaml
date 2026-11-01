@@ -17,6 +17,8 @@
 #   consumo       unidades necesarias para 72 h: por_adulto, por_nino y/o fijo
 #   solo_con_ninos  true si solo aplica cuando la familia tiene niños
 #   escala_raciones true si se multiplica en el kit Plus (comida y bebida)
+#   sin_comision  true si Mercado Libre no paga comisión por ese producto (ej. medicamentos);
+#                 se muestra con su liga normal y el robot no te lo reclama
 #   compra_local  true si conviene comprarlo en la tienda de la esquina (no lleva liga)
 #   lugar_compra  dónde comprarlo si es compra_local (ej. Farmacia)
 #   nota          texto corto opcional que se muestra bajo el producto
@@ -212,8 +214,11 @@ productos:
     nombre: Ibuprofeno infantil en jarabe Advil, 100 ml
     categoria: Botiquín y salud
     nivel: maximo
-    compra_local: true
-    lugar_compra: farmacia
+    url: https://www.mercadolibre.com.mx/p/MLM39455412
+    afiliado: ""
+    sin_comision: true
+    ml_id: MLM39455412
+    ml_tipo: producto
     precio_ref: 124
     rinde: 1
     unidad: frasco
