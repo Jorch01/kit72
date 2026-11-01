@@ -1,4 +1,4 @@
-Revisión automática del 2026-11-01 20:58 UTC. Productos consultados: 0.
+Revisión automática del 2026-11-01 21:20 UTC. Productos consultados: 0.
 
 ## Sin liga de afiliado (no estás cobrando comisión)
 Copia estas URLs, pégalas juntas en el Generador de links y pon cada liga en el campo `afiliado`:
