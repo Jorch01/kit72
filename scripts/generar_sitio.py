@@ -61,6 +61,7 @@ def producto_publico(p):
         "consumo": p.get("consumo", {}), "soloNinos": bool(p.get("solo_con_ninos")),
         "escala": bool(p.get("escala_raciones")), "local": bool(p.get("compra_local")),
         "disponible": info.get("disponible", True), "nota": p.get("nota", ""),
+        "lugar": p.get("lugar_compra") or "súper o tienda cercana",
     }
 
 
@@ -93,6 +94,8 @@ def calcular(kit, adultos, ninos):
 # ---------------------------------------------------------------- plantilla
 def pagina(titulo, descripcion, cuerpo, camino, jsonld=None, extra_head=""):
     canonica = f"{URL}/{camino}".rstrip("/") + "/" if camino else f"{URL}/"
+    gv = CFG.get("google_verificacion")
+    verif = f'<meta name="google-site-verification" content="{escape(gv)}">' if gv else ""
     ld = ""
     for bloque in (jsonld or []):
         ld += f'<script type="application/ld+json">{json.dumps(bloque, ensure_ascii=False)}</script>\n'
@@ -104,6 +107,7 @@ def pagina(titulo, descripcion, cuerpo, camino, jsonld=None, extra_head=""):
 <title>{escape(titulo)}</title>
 <meta name="description" content="{escape(descripcion)}">
 <link rel="canonical" href="{canonica}">
+{verif}
 <meta property="og:type" content="website">
 <meta property="og:title" content="{escape(titulo)}">
 <meta property="og:description" content="{escape(descripcion)}">
@@ -140,6 +144,27 @@ def migas(*pares):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}
 
 
+def boton_lista(kit):
+    liga = (CFG.get("listas") or {}).get(kit)
+    if not liga:
+        return ""
+    return (f'<p><a class="btn grande" rel="sponsored nofollow noopener" target="_blank" href="{escape(liga)}">'
+            f'Ver el kit {escape(CFG["kits"][kit]["nombre"])} completo en Mercado Libre</a></p>')
+
+
+def riesgos_grupo(grupo):
+    return {k: v for k, v in RIESGOS.items() if v.get("grupo", "naturales") == grupo}
+
+
+def chips_guias():
+    nat = "".join(f'<a class="chip" href="{ruta("guias/" + r + "/")}">{escape(v["titulo"])}</a>'
+                  for r, v in riesgos_grupo("naturales").items())
+    otr = "".join(f'<a class="chip" href="{ruta("guias/" + r + "/")}">{escape(v["titulo"])}</a>'
+                  for r, v in riesgos_grupo("otras").items())
+    return (f'<h3 class="cat">Desastres naturales</h3><div class="chips">{nat}</div>'
+            f'<h3 class="cat">Otras emergencias</h3><div class="chips">{otr}</div>')
+
+
 def tabla_kit(kit, adultos, ninos):
     filas, total = calcular(kit, adultos, ninos)
     html = []
@@ -151,7 +176,7 @@ def tabla_kit(kit, adultos, ninos):
         for f in grupo:
             nota = f'<small>{escape(f["nota"])}</small>' if f["nota"] else ""
             if f["local"]:
-                accion = '<span class="local">Compra local</span>'
+                accion = f'<span class="local">Cómpralo en {escape(f["lugar"])}</span>'
                 cant = f'{f["unidades"]:g} {escape(f["unidad"])}'
             else:
                 cant = f'{f["paquetes"]} paq. · {dinero(f["subtotal"])}'
@@ -180,8 +205,7 @@ def pagina_inicio():
   <span class="nivel">{escape(info['nombre'])}</span>
   <span class="precio">desde {dinero(total)}</span>
   <p>{escape(info['descripcion'])}</p></a>""")
-    guias = "".join(f'<a class="chip" href="{ruta("guias/" + r + "/")}">{escape(v["titulo"])}</a>'
-                    for r, v in RIESGOS.items())
+    guias = chips_guias()
     cuerpo = f"""
 <section class="hero">
   <h1>Tu kit de emergencia de 72 horas, calculado para tu familia</h1>
@@ -199,9 +223,15 @@ def pagina_inicio():
     {''.join(f'<button role="tab" data-kit="{k}"{" class=activo" if k == "maximo" else ""}>{escape(CFG["kits"][k]["nombre"])}</button>' for k in NIVELES)}
   </div>
   <p id="desc-kit" class="desc"></p>
+  <div class="guia-carrito">
+    <strong>Arma tu carrito en 3 pasos:</strong> toca <em>Agregar</em> en cada producto, agrégalo al carrito en Mercado Libre con la cantidad indicada y regresa a esta pestaña. Aquí llevamos la cuenta.
+  </div>
+  <div id="lista-completa"></div>
   <div id="resultado" aria-live="polite"></div>
+  <div class="progreso"><div class="barra-progreso"><span id="barra"></span></div><span id="progreso-txt">0 de 0 agregados</span></div>
   <div class="total"><span>Total estimado en Mercado Libre</span><strong id="total">—</strong></div>
-  <p class="aviso">Precios revisados automáticamente. El agua marcada como "compra local" no se suma: por su peso conviene comprarla cerca de casa.</p>
+  <p class="acciones"><a class="btn grande" id="ir-carrito" target="_blank" rel="noopener" href="https://www.mercadolibre.com.mx/gz/cart/v2">Ir a mi carrito de Mercado Libre</a> <button type="button" class="btn-sec" id="reiniciar">Reiniciar lista</button></p>
+  <p class="aviso">Precios revisados automáticamente. Lo marcado con "Cómpralo en…" no se suma al total: el agua conviene comprarla cerca de casa por su peso y los medicamentos, en farmacia.</p>
 </section>
 
 <section class="kits">
@@ -212,7 +242,7 @@ def pagina_inicio():
 
 <section class="guias">
   <h2>Guías por tipo de emergencia</h2>
-  <div class="chips">{guias}</div>
+  {guias}
 </section>
 <script src="{ruta('assets/catalogo.js')}"></script>
 <script src="{ruta('assets/calculadora.js')}"></script>
@@ -235,6 +265,7 @@ def paginas_kits():
 <h1>Kit de emergencia {escape(info['nombre'])} para 72 horas</h1>
 <p class="lead">{escape(info['descripcion'])}</p>
 <p>Lista para una familia de {fam['adultos']} adultos y {fam['ninos']} niños. <a href="{ruta()}#calculadora">Ajústala a tu familia en la calculadora</a>.</p>
+{boton_lista(k)}
 {tabla}
 <div class="total"><span>Total estimado</span><strong>{dinero(total)}</strong></div>
 """
@@ -248,7 +279,7 @@ def paginas_kits():
                             "Compara los kits de emergencia Mínimo, Máximo y Plus para 72 horas.", cuerpo, "kits/"))
 
 
-def bloque_riesgo(r, lugar=""):
+def bloque_riesgo(r, lugar="", ciudad=None):
     v = RIESGOS[r]
     consejos = "".join(f"<li>{escape(c)}</li>" for c in v["consejos"])
     faq = "".join(f"<details><summary>{escape(f['p'])}</summary><p>{escape(f['r'])}</p></details>"
@@ -256,12 +287,21 @@ def bloque_riesgo(r, lugar=""):
     kit = v["kit_sugerido"]
     fam = CFG["familia_default"]
     tabla, total = tabla_kit(kit, fam["adultos"], fam["ninos"])
+    contexto = ""
+    if ciudad:
+        ante = ciudad.get("antecedente")
+        if ante:
+            contexto += f"<p>En {escape(ciudad['nombre'])} todavía se recuerda {escape(ante)}. Prepararte con tiempo es lo que más ayuda cuando vuelve a pasar algo así.</p>"
+        contexto += (f"<p>En cualquier emergencia en {escape(ciudad['estado'])} llama al <strong>911</strong> y sigue las indicaciones de Protección Civil de tu municipio. "
+                     f"Revisa también el atlas de riesgos de tu municipio para saber si tu colonia está en zona de inundación o de mayor riesgo.</p>")
     html = f"""
+{contexto}
 <p class="lead">{escape(v['temporada'])}</p>
 <h2>Qué hacer para estar listo{escape(lugar)}</h2>
 <ul class="simple">{consejos}</ul>
 <h2>Kit recomendado: {escape(CFG['kits'][kit]['nombre'])}</h2>
 <p>Para {fam['adultos']} adultos y {fam['ninos']} niños, total estimado <strong>{dinero(total)}</strong>. <a href="{ruta()}#calculadora">Calcúlalo para tu familia</a>.</p>
+{boton_lista(kit)}
 {tabla}
 <h2>Preguntas frecuentes</h2>
 <div class="faq">{faq}</div>
@@ -280,11 +320,13 @@ def paginas_guias():
         locales = [c for c in CIUDADES if r in c["riesgos"]]
         ligas = "".join(f'<a class="chip" href="{ruta(local_camino(r, c))}">{escape(c["nombre"])}</a>'
                         for c in locales)
+        seccion_ciudades = f"<h2>Guías por ciudad</h2><div class='chips'>{ligas}</div>" if ligas else ""
         cuerpo = f"""
 <nav class="migas"><a href="{ruta()}">Inicio</a> › <a href="{ruta('guias/')}">Guías</a> › {escape(v['titulo'])}</nav>
 <h1>{escape(v['titulo'])}: lista completa para 72 horas</h1>
 {html}
-<h2>Guías por ciudad</h2><div class="chips">{ligas}</div>
+{seccion_ciudades}
+<h2>Más guías</h2>{chips_guias()}
 """
         camino = f"guias/{r}/"
         escribir(camino.rstrip("/"), pagina(f"{v['titulo']} · lista y precios | {CFG['nombre']}",
@@ -295,7 +337,7 @@ def paginas_guias():
         enlaces.append(f'<li><a href="{ruta(camino)}">{escape(v["titulo"])}</a></li>')
     escribir("guias", pagina(f"Guías de emergencia · {CFG['nombre']}",
                              "Guías para preparar tu kit de emergencia según el riesgo: huracán, sismo e inundación.",
-                             f"<h1>Guías de emergencia</h1><ul class='simple'>{''.join(enlaces)}</ul>", "guias/"))
+                             f"<h1>Guías de emergencia</h1><p>Elige la situación que te preocupa: cada guía trae consejos prácticos, preguntas frecuentes y el kit recomendado con precios.</p>{chips_guias()}", "guias/"))
     return urls + ["guias/"]
 
 
@@ -308,7 +350,7 @@ def paginas_locales():
     for c in CIUDADES:
         for r in c["riesgos"]:
             v = RIESGOS[r]
-            html, ld_faq = bloque_riesgo(r, f" en {c['nombre']}")
+            html, ld_faq = bloque_riesgo(r, f" en {c['nombre']}", c)
             otras = [x for x in c["riesgos"] if x != r]
             extra = "".join(f'<a class="chip" href="{ruta(local_camino(x, c))}">{escape(RIESGOS[x]["titulo"])} en {escape(c["nombre"])}</a>'
                             for x in otras)
@@ -320,6 +362,7 @@ def paginas_locales():
 <p>Si vives en {escape(c['nombre'])}, el {escape(v['nombre'])} es uno de los riesgos para los que conviene tener un kit listo. Esta es la lista con cantidades y precios para entrega en {escape(c['estado'])}.</p>
 {html}
 {f'<h2>Otros riesgos en {escape(c["nombre"])}</h2><div class="chips">{extra}</div>' if extra else ''}
+<h2>Otras guías útiles</h2>{chips_guias()}
 """
             escribir(camino.rstrip("/"), pagina(f"{titulo} | {CFG['nombre']}",
                                                 f"Qué debe llevar un {v['titulo'].lower()} en {c['nombre']}: lista, cantidades y precios para tu familia.",
@@ -349,7 +392,8 @@ def recursos():
     destino = SALIDA / "assets"
     shutil.copytree(RAIZ / "assets", destino, dirs_exist_ok=True)
     datos = {"kits": CFG["kits"], "niveles": NIVELES, "categorias": ORDEN_CATEGORIAS,
-             "simbolo": CFG.get("simbolo", "$"), "productos": PRODUCTOS}
+             "simbolo": CFG.get("simbolo", "$"), "productos": PRODUCTOS,
+             "listas": CFG.get("listas") or {}}
     (destino / "catalogo.js").write_text(
         "window.KIT72=" + json.dumps(datos, ensure_ascii=False) + ";", encoding="utf-8")
 
