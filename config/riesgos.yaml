@@ -1,0 +1,50 @@
+# Texto por tipo de riesgo para las páginas locales y las guías.
+riesgos:
+  huracan:
+    nombre: huracán
+    titulo: Kit de emergencia para huracán
+    temporada: La temporada de huracanes del Atlántico va del 1 de junio al 30 de noviembre, y la del Pacífico arranca el 15 de mayo. El mejor momento para armar el kit es antes de que haya un aviso de tormenta, cuando todavía hay existencias y no hay filas.
+    kit_sugerido: maximo
+    consejos:
+      - Ten agua para al menos tres días por persona; después de un huracán el servicio puede tardar en restablecerse.
+      - Guarda copias de actas, CURP, pólizas de seguro y escrituras en bolsas herméticas; el agua es lo que más documentos destruye.
+      - Carga linternas, celulares y baterías externas desde que se emite la alerta.
+      - Ten efectivo en billetes chicos; sin luz, las terminales y los cajeros dejan de funcionar.
+      - Sigue solo la información oficial de Protección Civil por radio.
+    faq:
+      - p: ¿Con cuánta anticipación debo preparar el kit?
+        r: Antes de que empiece la temporada. Cuando ya hay un aviso de huracán, el agua y las pilas se agotan rápido y las entregas a domicilio se suspenden.
+      - p: ¿Cuánta agua necesito?
+        r: La recomendación general es de 2 litros por persona al día para beber, es decir, 6 litros por persona para 72 horas. La calculadora lo ajusta al tamaño de tu familia.
+  sismo:
+    nombre: sismo
+    titulo: Mochila de emergencia para sismo
+    temporada: Los sismos no tienen temporada. Por eso la mochila debe estar lista siempre, junto a la puerta de salida, y revisarse cada seis meses para cambiar alimentos y pilas.
+    kit_sugerido: minimo
+    consejos:
+      - Mantén la mochila cerca de la salida y que todos en casa sepan dónde está.
+      - Acuerda un punto de reunión familiar fuera de casa por si los separa el sismo.
+      - Pon un silbato a cada integrante, incluidos los niños; sirve para pedir ayuda sin gastar energía.
+      - Guarda una linterna frontal en cada recámara.
+      - Practica la ruta de evacuación con los niños para que no se paralicen.
+    faq:
+      - p: ¿Qué debe llevar una mochila para sismo?
+        r: Agua, alimentos que no se cocinan, linterna, radio, silbato, botiquín, copias de documentos y efectivo. La lista exacta y las cantidades para tu familia aparecen en la calculadora.
+      - p: ¿Cada cuánto reviso la mochila?
+        r: Cada seis meses. Cambia los alimentos y el agua que estén por caducar y prueba linternas y radio.
+  inundacion:
+    nombre: inundación
+    titulo: Kit de emergencia para inundaciones
+    temporada: Las lluvias fuertes se concentran entre junio y octubre. Tener el kit listo permite salir de casa en minutos si el agua empieza a subir.
+    kit_sugerido: maximo
+    consejos:
+      - Guarda el kit en un lugar alto de la casa.
+      - Mete documentos, medicinas y pilas en bolsas herméticas.
+      - No tomes agua de la llave después de una inundación; usa la embotellada del kit.
+      - Desconecta la luz si el agua entra a tu casa y no camines por corrientes de agua.
+      - Las toallitas húmedas y el gel antibacterial ayudan cuando no hay agua limpia para lavarse.
+    faq:
+      - p: ¿Qué es lo primero que se pierde en una inundación?
+        r: Documentos, comida y agua potable. Por eso el kit incluye bolsas herméticas y agua embotellada.
+      - p: ¿Sirve el mismo kit que para huracán?
+        r: Sí. La base es la misma; lo importante es guardarlo en alto y tener todo protegido contra el agua.

@@ -1,0 +1,22 @@
+# Páginas locales para SEO. Cada combinación ciudad + riesgo genera una página.
+# Agrega ciudades libremente; "riesgos" debe usar claves de config/riesgos.yaml
+ciudades:
+  - {nombre: Cancún, estado: Quintana Roo, riesgos: [huracan, inundacion]}
+  - {nombre: Playa del Carmen, estado: Quintana Roo, riesgos: [huracan]}
+  - {nombre: Tulum, estado: Quintana Roo, riesgos: [huracan]}
+  - {nombre: Chetumal, estado: Quintana Roo, riesgos: [huracan]}
+  - {nombre: Mérida, estado: Yucatán, riesgos: [huracan]}
+  - {nombre: Campeche, estado: Campeche, riesgos: [huracan]}
+  - {nombre: Veracruz, estado: Veracruz, riesgos: [huracan, inundacion]}
+  - {nombre: Tampico, estado: Tamaulipas, riesgos: [huracan, inundacion]}
+  - {nombre: Villahermosa, estado: Tabasco, riesgos: [inundacion]}
+  - {nombre: Acapulco, estado: Guerrero, riesgos: [huracan, sismo]}
+  - {nombre: Los Cabos, estado: Baja California Sur, riesgos: [huracan]}
+  - {nombre: Mazatlán, estado: Sinaloa, riesgos: [huracan]}
+  - {nombre: Puerto Vallarta, estado: Jalisco, riesgos: [huracan, sismo]}
+  - {nombre: Ciudad de México, estado: CDMX, riesgos: [sismo]}
+  - {nombre: Puebla, estado: Puebla, riesgos: [sismo]}
+  - {nombre: Oaxaca, estado: Oaxaca, riesgos: [sismo]}
+  - {nombre: Guadalajara, estado: Jalisco, riesgos: [sismo]}
+  - {nombre: Tijuana, estado: Baja California, riesgos: [sismo]}
+  - {nombre: Monterrey, estado: Nuevo León, riesgos: [inundacion, huracan]}

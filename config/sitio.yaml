@@ -1,0 +1,33 @@
+# Configuración general del sitio Kit72
+nombre: Kit72
+eslogan: Kits de emergencia de 72 horas armados al mejor precio
+# URL pública que genera GitHub Pages (usuario.github.io/repo)
+url_base: https://jorch01.github.io/kit72
+# Ruta del repo dentro del dominio; si algún día usas dominio propio, déjala vacía ""
+ruta_base: /kit72
+pais: MX
+moneda: MXN
+simbolo: $
+etiqueta_afiliado: jorchcme
+
+# Si un precio sube más de este porcentaje frente al último registrado, se abre un aviso
+alerta_alza_pct: 25
+
+# Familia que se muestra por defecto en la calculadora
+familia_default:
+  adultos: 2
+  ninos: 2
+
+kits:
+  minimo:
+    nombre: Mínimo
+    descripcion: Lo indispensable para pasar 72 horas sin luz, agua corriente ni tiendas abiertas.
+    raciones: 1.0
+  maximo:
+    nombre: Máximo
+    descripcion: Todo lo del Mínimo más salud, higiene, abrigo y protección de documentos.
+    raciones: 1.0
+  plus:
+    nombre: Plus
+    descripcion: Todo lo del Máximo con raciones extra para 4 a 5 días y un kit de calma para los niños.
+    raciones: 1.5
