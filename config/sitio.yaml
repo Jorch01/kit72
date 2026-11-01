@@ -16,9 +16,9 @@ google_verificacion: ""
 # Listas de afiliado de Mercado Libre con el kit completo (una liga por kit).
 # Si están vacías, el sitio no muestra el botón "Ver kit completo en Mercado Libre".
 listas:
-  minimo: ""
-  maximo: ""
-  plus: ""
+  minimo: https://meli.la/2JL9GGz
+  maximo: https://meli.la/164Gdpw
+  plus: https://meli.la/2dBWU3Q
 
 # Si un precio sube más de este porcentaje frente al último registrado, se abre un aviso
 alerta_alza_pct: 25
