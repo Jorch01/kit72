@@ -60,6 +60,16 @@ jobs:
             gh issue create --title "$TITULO" --body-file datos/reporte.md
           fi
 
+      - name: Cerrar el aviso si ya no hay pendientes
+        if: steps.precios.outputs.requiere_accion == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          NUM=$(gh issue list --state open --search "Kit72: productos por revisar in:title" --json number --jq '.[0].number')
+          if [ -n "$NUM" ]; then
+            gh issue close "$NUM" --comment "Todo en orden en la revisión de hoy. Si vuelve a haber pendientes, se abrirá un aviso nuevo."
+          fi
+
       - name: Generar sitio
         run: python scripts/generar_sitio.py
 
