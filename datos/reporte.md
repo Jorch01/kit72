@@ -1,4 +1,4 @@
-Revisión automática del 2026-11-01 21:26 UTC. Productos consultados: 0.
+Revisión automática del 2026-11-01 21:27 UTC. Productos consultados: 0.
 
 ## No se pudieron consultar
 Si son todos, revisa los Secrets ML_CLIENT_ID y ML_CLIENT_SECRET.
@@ -14,6 +14,7 @@ Si son todos, revisa los Secrets ML_CLIENT_ID y ML_CLIENT_SECRET.
 - mantas-termicas-10: HTTP 403
 - botiquin-14: HTTP 403
 - termometro-sacre: HTTP 401
+- ibuprofeno-infantil: HTTP 401
 - gel-purell-236: HTTP 403
 - papel-maxima-4: HTTP 401
 - bolsas-basura-28: HTTP 403
