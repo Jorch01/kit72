@@ -1,0 +1,80 @@
+name: Actualizar precios y publicar
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Todos los días a las 7:17 de Cancún (12:17 UTC)
+    - cron: "17 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install pyyaml
+
+      - name: Revisar precios en Mercado Libre
+        id: precios
+        continue-on-error: true
+        env:
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+        run: python scripts/actualizar_precios.py
+
+      - name: Guardar precios en el repo
+        run: |
+          git config user.name "kit72-bot"
+          git config user.email "kit72-bot@users.noreply.github.com"
+          git add datos/
+          git diff --cached --quiet || git commit -m "Precios actualizados $(date -u +%F)"
+          git push || echo "Sin cambios que subir"
+
+      - name: Avisarte si hay algo que hacer
+        if: steps.precios.outputs.requiere_accion == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITULO="Kit72: productos por revisar"
+          NUM=$(gh issue list --state open --search "$TITULO in:title" --json number --jq '.[0].number')
+          if [ -n "$NUM" ]; then
+            gh issue edit "$NUM" --body-file datos/reporte.md
+          else
+            gh issue create --title "$TITULO" --body-file datos/reporte.md
+          fi
+
+      - name: Generar sitio
+        run: python scripts/generar_sitio.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  publicar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
