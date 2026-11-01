@@ -77,7 +77,7 @@ def main():
     for p in cat["productos"]:
         if p.get("compra_local"):
             continue
-        if not p.get("afiliado"):
+        if not p.get("afiliado") and not p.get("sin_comision"):
             sin_liga.append(p)
         if not p.get("ml_id"):
             continue
