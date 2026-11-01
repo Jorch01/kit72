@@ -18,6 +18,7 @@
 #   solo_con_ninos  true si solo aplica cuando la familia tiene niños
 #   escala_raciones true si se multiplica en el kit Plus (comida y bebida)
 #   compra_local  true si conviene comprarlo en la tienda de la esquina (no lleva liga)
+#   lugar_compra  dónde comprarlo si es compra_local (ej. Farmacia)
 #   nota          texto corto opcional que se muestra bajo el producto
 
 productos:
@@ -28,6 +29,7 @@ productos:
     categoria: Agua y alimentos
     nivel: minimo
     compra_local: true
+    lugar_compra: súper o tienda cercana
     precio_ref: 170
     rinde: 22.5
     unidad: litros
@@ -40,7 +42,7 @@ productos:
     categoria: Agua y alimentos
     nivel: minimo
     url: https://www.mercadolibre.com.mx/p/MLM21726583
-    afiliado: ""
+    afiliado: https://meli.la/2bwWvYx
     ml_id: MLM21726583
     ml_tipo: producto
     precio_ref: 145
@@ -55,7 +57,7 @@ productos:
     categoria: Agua y alimentos
     nivel: minimo
     url: https://articulo.mercadolibre.com.mx/MLM-3328599206-barras-de-granola-nature-valley-crunchy-miel-10-piezas-_JM
-    afiliado: ""
+    afiliado: https://meli.la/1aRKMWK
     ml_id: MLM3328599206
     ml_tipo: item
     precio_ref: 51
@@ -69,7 +71,7 @@ productos:
     categoria: Agua y alimentos
     nivel: minimo
     url: https://www.mercadolibre.com.mx/p/MLM51716225
-    afiliado: ""
+    afiliado: https://meli.la/2hCvxJS
     ml_id: MLM51716225
     ml_tipo: producto
     precio_ref: 53
@@ -83,7 +85,7 @@ productos:
     categoria: Agua y alimentos
     nivel: maximo
     url: https://articulo.mercadolibre.com.mx/MLM-6274891882-del-valle-junior-100-jugo-multisabor-24200ml-_JM
-    afiliado: ""
+    afiliado: https://meli.la/2dSPMuj
     ml_id: MLM6274891882
     ml_tipo: item
     precio_ref: 229
@@ -99,7 +101,7 @@ productos:
     categoria: Agua y alimentos
     nivel: maximo
     url: https://www.mercadolibre.com.mx/p/MLM29233183
-    afiliado: ""
+    afiliado: https://meli.la/1LPD2mp
     ml_id: MLM29233183
     ml_tipo: producto
     precio_ref: 50
@@ -114,7 +116,7 @@ productos:
     categoria: Luz y comunicación
     nivel: minimo
     url: https://www.mercadolibre.com.mx/p/MLM69559764
-    afiliado: ""
+    afiliado: https://meli.la/18uEsVc
     ml_id: MLM69559764
     ml_tipo: producto
     precio_ref: 79
@@ -128,7 +130,7 @@ productos:
     categoria: Luz y comunicación
     nivel: minimo
     url: https://www.mercadolibre.com.mx/p/MLM49033177
-    afiliado: ""
+    afiliado: https://meli.la/2P8ioi3
     ml_id: MLM49033177
     ml_tipo: producto
     precio_ref: 161
@@ -142,7 +144,7 @@ productos:
     categoria: Luz y comunicación
     nivel: minimo
     url: https://articulo.mercadolibre.com.mx/MLM-2333123325-paquete-8-pilas-1hora-aa-alcalinas-15v-larga-duracion-_JM
-    afiliado: ""
+    afiliado: https://meli.la/22dq8xC
     ml_id: MLM2333123325
     ml_tipo: item
     precio_ref: 44
@@ -157,7 +159,7 @@ productos:
     categoria: Abrigo y seguridad
     nivel: minimo
     url: https://www.mercadolibre.com.mx/p/MLM74178095
-    afiliado: ""
+    afiliado: https://meli.la/1EY8uCi
     ml_id: MLM74178095
     ml_tipo: producto
     precio_ref: 73
@@ -171,7 +173,7 @@ productos:
     categoria: Abrigo y seguridad
     nivel: maximo
     url: https://articulo.mercadolibre.com.mx/MLM-609852395-10-pz-manta-termica-130x210-camping-rescate-supervivencia-_JM
-    afiliado: ""
+    afiliado: https://meli.la/1DoNSLf
     ml_id: MLM609852395
     ml_tipo: item
     precio_ref: 145
@@ -185,7 +187,7 @@ productos:
     categoria: Botiquín y salud
     nivel: minimo
     url: https://articulo.mercadolibre.com.mx/MLM-5894624846-botiquin-de-primeros-auxilios-chico-14-pzas-escuela-oficina-_JM
-    afiliado: ""
+    afiliado: https://meli.la/1S9qQzT
     ml_id: MLM5894624846
     ml_tipo: item
     precio_ref: 159
@@ -198,7 +200,7 @@ productos:
     categoria: Botiquín y salud
     nivel: maximo
     url: https://www.mercadolibre.com.mx/p/MLM51560118
-    afiliado: ""
+    afiliado: https://meli.la/1LQ2LRM
     ml_id: MLM51560118
     ml_tipo: producto
     precio_ref: 65
@@ -210,10 +212,8 @@ productos:
     nombre: Ibuprofeno infantil en jarabe Advil, 100 ml
     categoria: Botiquín y salud
     nivel: maximo
-    url: https://www.mercadolibre.com.mx/p/MLM39455412
-    afiliado: ""
-    ml_id: MLM39455412
-    ml_tipo: producto
+    compra_local: true
+    lugar_compra: farmacia
     precio_ref: 124
     rinde: 1
     unidad: frasco
@@ -227,7 +227,7 @@ productos:
     categoria: Higiene
     nivel: minimo
     url: https://articulo.mercadolibre.com.mx/MLM-2467415429-gel-antibacterial-purell-aloe-vera-calmante-para-manos-236ml-aloe-_JM
-    afiliado: ""
+    afiliado: https://meli.la/2iSZwvV
     ml_id: MLM2467415429
     ml_tipo: item
     precio_ref: 65
@@ -240,7 +240,7 @@ productos:
     categoria: Higiene
     nivel: minimo
     url: https://www.mercadolibre.com.mx/p/MLM63008699
-    afiliado: ""
+    afiliado: https://meli.la/18xQW28
     ml_id: MLM63008699
     ml_tipo: producto
     precio_ref: 29
@@ -253,7 +253,7 @@ productos:
     categoria: Higiene
     nivel: minimo
     url: https://articulo.mercadolibre.com.mx/MLM-928169600-28-bolsas-de-basura-medianas-basuritas-con-jareta-48x60-cm-_JM
-    afiliado: ""
+    afiliado: https://meli.la/2nTsZnK
     ml_id: MLM928169600
     ml_tipo: item
     precio_ref: 49
@@ -266,7 +266,7 @@ productos:
     categoria: Higiene
     nivel: maximo
     url: https://www.mercadolibre.com.mx/p/MLM19997807
-    afiliado: ""
+    afiliado: https://meli.la/1UETXbV
     ml_id: MLM19997807
     ml_tipo: producto
     precio_ref: 23
@@ -281,7 +281,7 @@ productos:
     categoria: Documentos
     nivel: maximo
     url: https://www.mercadolibre.com.mx/p/MLM18972412
-    afiliado: ""
+    afiliado: https://meli.la/2sZdvY7
     ml_id: MLM18972412
     ml_tipo: producto
     precio_ref: 59
@@ -296,7 +296,7 @@ productos:
     categoria: Kit de calma
     nivel: plus
     url: https://articulo.mercadolibre.com.mx/MLM-1431551047-10-mini-libro-colorear-crayola-nino-nina-pinata-fiesta-_JM
-    afiliado: ""
+    afiliado: https://meli.la/1QjbGLJ
     ml_id: MLM1431551047
     ml_tipo: item
     precio_ref: 148
@@ -311,7 +311,7 @@ productos:
     categoria: Kit de calma
     nivel: plus
     url: https://www.mercadolibre.com.mx/p/MLM79649620
-    afiliado: ""
+    afiliado: https://meli.la/1AqrJyn
     ml_id: MLM79649620
     ml_tipo: producto
     precio_ref: 62
