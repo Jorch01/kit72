@@ -10,6 +10,16 @@ moneda: MXN
 simbolo: $
 etiqueta_afiliado: jorchcme
 
+# Código de verificación de Google Search Console (solo el valor de content="...")
+google_verificacion: ""
+
+# Listas de afiliado de Mercado Libre con el kit completo (una liga por kit).
+# Si están vacías, el sitio no muestra el botón "Ver kit completo en Mercado Libre".
+listas:
+  minimo: ""
+  maximo: ""
+  plus: ""
+
 # Si un precio sube más de este porcentaje frente al último registrado, se abre un aviso
 alerta_alza_pct: 25
 

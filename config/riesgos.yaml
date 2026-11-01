@@ -48,3 +48,139 @@ riesgos:
         r: Documentos, comida y agua potable. Por eso el kit incluye bolsas herméticas y agua embotellada.
       - p: ¿Sirve el mismo kit que para huracán?
         r: Sí. La base es la misma; lo importante es guardarlo en alto y tener todo protegido contra el agua.
+  apagon:
+    nombre: apagón
+    titulo: Kit para apagón prolongado
+    grupo: otras
+    temporada: Los apagones largos llegan con huracanes, ondas de calor o fallas en la red. Sin luz se va el refrigerador, la bomba de agua, el internet y las terminales de pago, así que conviene tener resuelto lo básico para tres días.
+    kit_sugerido: minimo
+    consejos:
+      - Ten una linterna por adulto y pilas de repuesto; evita usar velas cerca de niños.
+      - Mantén el celular y una batería externa cargados, y baja el brillo para que duren más.
+      - Guarda efectivo en billetes chicos; sin luz no funcionan cajeros ni terminales.
+      - Abre el refrigerador lo menos posible y consume primero lo que se echa a perder.
+      - Desconecta aparatos para protegerlos cuando regrese la corriente.
+    faq:
+      - p: ¿Cuánto dura la comida del refrigerador sin luz?
+        r: Con la puerta cerrada, unas cuatro horas en el refrigerador y hasta un día en un congelador lleno. Por eso el kit lleva alimentos que no necesitan frío.
+      - p: ¿Qué es lo primero que debo tener?
+        r: Luz portátil, agua embotellada, un radio de pilas y efectivo. Con eso cubres las primeras horas mientras evalúas la situación.
+  ciberataque:
+    nombre: ciberataque
+    titulo: Plan para ciberataques y caídas de bancos o redes
+    grupo: otras
+    temporada: Una falla informática grande, un ataque a un banco o la caída de la red celular puede dejarte sin pagos digitales, sin banca en línea y sin comunicación por días. No hace falta entrar en pánico; basta con tener respaldos fuera de la red.
+    kit_sugerido: minimo
+    consejos:
+      - Ten algo de efectivo en casa para comprar comida y agua aunque fallen tarjetas y transferencias.
+      - Guarda copias en papel de identificaciones, actas, pólizas y contactos importantes en bolsas herméticas.
+      - Anota en papel los teléfonos de familiares y de tu banco; no dependas solo de la agenda del celular.
+      - Activa la verificación en dos pasos en tu correo y tu banco, y desconfía de mensajes que pidan datos con urgencia.
+      - Un radio de pilas te mantiene informado si se cae internet.
+    faq:
+      - p: ¿Cuánto efectivo conviene tener?
+        r: Lo suficiente para cubrir comida, agua y transporte de tu familia durante tres días, en billetes chicos y monedas.
+      - p: ¿Sirve un kit físico para un problema digital?
+        r: Sí. Si fallan los pagos o el internet, lo que te resuelve los primeros días es tener agua, comida, luz, efectivo y tus documentos en papel.
+  disturbios:
+    nombre: bloqueos y disturbios
+    titulo: Kit para bloqueos, manifestaciones y disturbios
+    grupo: otras
+    temporada: Un bloqueo carretero, una manifestación grande o un periodo de inseguridad puede obligarte a quedarte en casa varios días o cortar el abasto en tu colonia. Tener reservas evita salir cuando no es seguro.
+    kit_sugerido: minimo
+    consejos:
+      - Ten comida y agua para tres días para no tener que salir.
+      - Acuerda con tu familia un punto de reunión y quién recoge a los niños de la escuela.
+      - Sigue solo información oficial y verifica antes de compartir rumores.
+      - Mantén cargado el celular y ten a la mano los números de emergencia, como el 911.
+      - Ten tus documentos y algo de efectivo listos por si necesitas salir.
+    faq:
+      - p: ¿Qué hago si no puedo llegar a casa?
+        r: Avisa a tu familia, busca un lugar seguro y espera indicaciones oficiales. Por eso es útil que cada adulto tenga un kit chico en el trabajo o en el auto.
+      - p: ¿Cuál kit me conviene?
+        r: El Mínimo cubre lo necesario para quedarte en casa tres días; el Máximo agrega botiquín, higiene y protección de documentos.
+  conflicto:
+    nombre: conflicto internacional
+    titulo: Cómo prepararte con calma ante un conflicto internacional
+    grupo: otras
+    temporada: Las noticias sobre guerras y tensiones internacionales generan preocupación. En la práctica, lo que más afecta a una familia son los efectos indirectos, como alzas de precios, desabasto o fallas en servicios, y para eso sirve el mismo kit de 72 horas.
+    kit_sugerido: maximo
+    consejos:
+      - Informa a tu familia con fuentes oficiales y medios confiables; evita alarmar a los niños.
+      - Ten reservas de agua, comida y medicinas de uso diario para varios días.
+      - Guarda copias de documentos y pasaportes en un solo lugar fácil de tomar.
+      - Ten un plan de comunicación familiar por si fallan las redes.
+      - Cuida tu salud mental y limita el tiempo frente a noticias y redes.
+    faq:
+      - p: ¿Necesito un búnker o equipo especial?
+        r: No. Para una familia, lo útil es tener agua, comida, luz, botiquín, documentos y un plan de comunicación, que es lo que trae el kit.
+      - p: ¿Cómo hablo con mis hijos sobre las noticias?
+        r: Con calma y en palabras simples. Explícales que la familia tiene un plan y deja que ayuden a armar el kit; participar les da seguridad.
+  corte_agua:
+    nombre: corte de agua
+    titulo: Kit para cortes de agua prolongados
+    grupo: otras
+    temporada: Las sequías, reparaciones y fallas de bombeo pueden dejar colonias enteras sin agua varios días. El agua para beber es lo primero, pero también importa la higiene.
+    kit_sugerido: maximo
+    consejos:
+      - Calcula 2 litros de agua para beber por persona al día, aparte del agua para aseo.
+      - Usa toallitas húmedas y gel antibacterial para ahorrar agua en la higiene.
+      - Ten bolsas de basura para manejar desechos si no funciona el drenaje.
+      - Almacena el agua en un lugar fresco y sin sol directo.
+      - Revisa la caducidad del agua embotellada cada seis meses.
+    faq:
+      - p: ¿Cuánta agua necesito para mi familia?
+        r: La calculadora lo hace por ti; la base es de 6 litros por persona para 72 horas solo para beber.
+      - p: ¿Cómo me aseo sin agua?
+        r: Con toallitas húmedas, gel antibacterial y un mínimo de agua para lo indispensable. Por eso el kit Máximo las incluye.
+  incendio:
+    nombre: incendio
+    titulo: Mochila de evacuación para incendios
+    grupo: otras
+    temporada: Los incendios forestales y urbanos obligan a salir en minutos. La diferencia la hace tener una mochila lista y saber a dónde ir.
+    kit_sugerido: minimo
+    consejos:
+      - Ten la mochila junto a la salida, con documentos, agua y linternas.
+      - Acuerda una ruta de salida y un punto de reunión fuera de casa.
+      - Si hay humo, avanza agachado y cúbrete nariz y boca con un paño húmedo.
+      - No regreses por objetos; lo importante ya está en la mochila.
+      - Ten a la mano el 911 y sigue las indicaciones de Protección Civil.
+    faq:
+      - p: ¿Qué debe llevar una mochila de evacuación?
+        r: Agua, alimento listo para comer, linterna, silbato, botiquín, copias de documentos y efectivo. Debe poder cargarla un adulto sin problema.
+      - p: ¿Cada cuánto la reviso?
+        r: Cada seis meses. Cambia alimentos y agua por caducar y prueba las linternas.
+  pandemia:
+    nombre: pandemia
+    titulo: Kit para cuarentena o pandemia
+    grupo: otras
+    temporada: Una emergencia sanitaria puede obligarte a quedarte en casa o a cuidar a un familiar enfermo. Tener lo básico evita salir cuando no conviene.
+    kit_sugerido: maximo
+    consejos:
+      - Ten comida no perecedera y agua para varios días.
+      - Incluye termómetro, gel antibacterial y los medicamentos que tu familia usa a diario.
+      - Ten bolsas de basura para separar desechos de la persona enferma.
+      - Anota en papel los teléfonos de tu médico y de tu clínica.
+      - Consulta siempre con un profesional de la salud antes de dar cualquier medicamento.
+    faq:
+      - p: ¿Qué medicinas debo tener?
+        r: Las que tu familia ya usa por indicación médica y lo que te recomiende tu médico. No te automediques.
+      - p: ¿Sirve el mismo kit de emergencia?
+        r: Sí; el kit Máximo agrega termómetro, higiene y protección de documentos, que es lo más útil en una cuarentena.
+  zombi:
+    nombre: apocalipsis zombi
+    titulo: Kit para el apocalipsis zombi (y para emergencias de verdad)
+    grupo: otras
+    temporada: Los zombis no existen, pero prepararse para ellos sirve igual que prepararse para un huracán o un sismo. La idea no es nueva; ya se ha usado en campañas oficiales de salud pública para que la gente arme su kit sin asustarse.
+    kit_sugerido: plus
+    consejos:
+      - Agua y comida para tres días, porque ni en el apocalipsis abren las tiendas.
+      - Linternas frontales, porque las manos se necesitan para otras cosas.
+      - Un silbato por persona para encontrarse sin hacer demasiado ruido.
+      - Un kit de calma para los niños; nada calma más que un juego de cartas.
+      - Y lo más importante, un plan familiar que sirva igual para zombis, huracanes y sismos.
+    faq:
+      - p: ¿En serio es para zombis?
+        r: Es una forma divertida de preparar a tu familia. Todo lo que trae sirve para emergencias reales como apagones, huracanes o sismos.
+      - p: ¿Es buena idea para hacerlo con niños?
+        r: Sí. Convertirlo en juego les quita el miedo y aprenden qué hacer si pasa algo de verdad.

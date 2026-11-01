@@ -1,22 +1,24 @@
 # Páginas locales para SEO. Cada combinación ciudad + riesgo genera una página.
-# Agrega ciudades libremente; "riesgos" debe usar claves de config/riesgos.yaml
+# "riesgos" usa claves de config/riesgos.yaml.
+# "antecedente" (opcional) es un evento real que la gente de la ciudad recuerda; da contexto
+# local a la página. Agrega solo datos que puedas verificar.
 ciudades:
-  - {nombre: Cancún, estado: Quintana Roo, riesgos: [huracan, inundacion]}
-  - {nombre: Playa del Carmen, estado: Quintana Roo, riesgos: [huracan]}
-  - {nombre: Tulum, estado: Quintana Roo, riesgos: [huracan]}
-  - {nombre: Chetumal, estado: Quintana Roo, riesgos: [huracan]}
-  - {nombre: Mérida, estado: Yucatán, riesgos: [huracan]}
+  - {nombre: Cancún, estado: Quintana Roo, riesgos: [huracan, inundacion], antecedente: "el huracán Wilma, que en 2005 dejó a Cancún varios días sin luz ni agua"}
+  - {nombre: Playa del Carmen, estado: Quintana Roo, riesgos: [huracan], antecedente: "el huracán Beryl, que tocó tierra cerca de Tulum en julio de 2024"}
+  - {nombre: Tulum, estado: Quintana Roo, riesgos: [huracan], antecedente: "el huracán Beryl, que tocó tierra cerca de Tulum en julio de 2024"}
+  - {nombre: Chetumal, estado: Quintana Roo, riesgos: [huracan], antecedente: "el huracán Dean, que en 2007 entró como categoría 5 al sur de Quintana Roo"}
+  - {nombre: Mérida, estado: Yucatán, riesgos: [huracan], antecedente: "el huracán Isidoro, que en 2002 dejó a buena parte de Yucatán sin luz"}
   - {nombre: Campeche, estado: Campeche, riesgos: [huracan]}
-  - {nombre: Veracruz, estado: Veracruz, riesgos: [huracan, inundacion]}
+  - {nombre: Veracruz, estado: Veracruz, riesgos: [huracan, inundacion], antecedente: "el huracán Karl, que en 2010 causó inundaciones graves en el centro de Veracruz"}
   - {nombre: Tampico, estado: Tamaulipas, riesgos: [huracan, inundacion]}
-  - {nombre: Villahermosa, estado: Tabasco, riesgos: [inundacion]}
-  - {nombre: Acapulco, estado: Guerrero, riesgos: [huracan, sismo]}
-  - {nombre: Los Cabos, estado: Baja California Sur, riesgos: [huracan]}
+  - {nombre: Villahermosa, estado: Tabasco, riesgos: [inundacion], antecedente: "la inundación de 2007, cuando el agua cubrió gran parte de Villahermosa"}
+  - {nombre: Acapulco, estado: Guerrero, riesgos: [huracan, sismo], antecedente: "el huracán Otis, que en octubre de 2023 golpeó Acapulco como categoría 5"}
+  - {nombre: Los Cabos, estado: Baja California Sur, riesgos: [huracan], antecedente: "el huracán Odile, que en 2014 dejó a Los Cabos días sin luz ni agua"}
   - {nombre: Mazatlán, estado: Sinaloa, riesgos: [huracan]}
   - {nombre: Puerto Vallarta, estado: Jalisco, riesgos: [huracan, sismo]}
-  - {nombre: Ciudad de México, estado: CDMX, riesgos: [sismo]}
-  - {nombre: Puebla, estado: Puebla, riesgos: [sismo]}
-  - {nombre: Oaxaca, estado: Oaxaca, riesgos: [sismo]}
+  - {nombre: Ciudad de México, estado: CDMX, riesgos: [sismo], antecedente: "los sismos del 19 de septiembre de 1985 y de 2017"}
+  - {nombre: Puebla, estado: Puebla, riesgos: [sismo], antecedente: "el sismo del 19 de septiembre de 2017, con epicentro entre Puebla y Morelos"}
+  - {nombre: Oaxaca, estado: Oaxaca, riesgos: [sismo], antecedente: "el sismo de magnitud 8.2 de septiembre de 2017 frente a las costas de Chiapas y Oaxaca"}
   - {nombre: Guadalajara, estado: Jalisco, riesgos: [sismo]}
   - {nombre: Tijuana, estado: Baja California, riesgos: [sismo]}
-  - {nombre: Monterrey, estado: Nuevo León, riesgos: [inundacion, huracan]}
+  - {nombre: Monterrey, estado: Nuevo León, riesgos: [inundacion, huracan], antecedente: "el huracán Alex, que en 2010 desbordó el río Santa Catarina"}
