@@ -1,0 +1,320 @@
+# CATÁLOGO DE PRODUCTOS — este es el único archivo que necesitas editar.
+#
+# Campos de cada producto:
+#   id            identificador corto, sin espacios (no lo cambies después de publicar)
+#   nombre        nombre que verá el visitante
+#   categoria     agrupa los productos en la página
+#   nivel         primer kit en que aparece: minimo | maximo | plus
+#                 (lo que está en "minimo" también sale en Máximo y Plus)
+#   url           liga normal del producto en Mercado Libre
+#   afiliado      liga corta que te da el Generador de links (meli.la/...). Si está vacía,
+#                 el sitio usa la url normal y NO cobras comisión; el aviso diario te lo recuerda.
+#   ml_id         ID que aparece en la url (MLM12345678 o MLM-1234567890 sin guion)
+#   ml_tipo       "producto" si la url es /p/MLM..., "item" si es articulo.mercadolibre...
+#   precio_ref    precio de referencia; el robot diario lo actualiza en datos/precios.json
+#   rinde         cuántas unidades trae un paquete
+#   unidad        cómo se llaman esas unidades (sobres, barras, litros...)
+#   consumo       unidades necesarias para 72 h: por_adulto, por_nino y/o fijo
+#   solo_con_ninos  true si solo aplica cuando la familia tiene niños
+#   escala_raciones true si se multiplica en el kit Plus (comida y bebida)
+#   compra_local  true si conviene comprarlo en la tienda de la esquina (no lleva liga)
+#   nota          texto corto opcional que se muestra bajo el producto
+
+productos:
+
+  # ---------- Agua y alimentos ----------
+  - id: agua
+    nombre: Agua purificada en botellas de 500 ml
+    categoria: Agua y alimentos
+    nivel: minimo
+    compra_local: true
+    precio_ref: 170
+    rinde: 22.5
+    unidad: litros
+    consumo: {por_adulto: 6, por_nino: 6}
+    escala_raciones: true
+    nota: 2 litros por persona al día. Por su peso conviene comprarla en el súper o la tienda de tu colonia; las botellas chicas las pueden cargar los niños.
+
+  - id: atun-tuny-8
+    nombre: Atún en agua Tuny, 8 sobres de 75 g
+    categoria: Agua y alimentos
+    nivel: minimo
+    url: https://www.mercadolibre.com.mx/p/MLM21726583
+    afiliado: ""
+    ml_id: MLM21726583
+    ml_tipo: producto
+    precio_ref: 145
+    rinde: 8
+    unidad: sobres
+    consumo: {por_adulto: 3, por_nino: 1}
+    escala_raciones: true
+    nota: En sobre abre fácil, no necesitas abrelatas.
+
+  - id: barras-nature-valley-10
+    nombre: Barras de granola Nature Valley Crunchy miel, 10 piezas
+    categoria: Agua y alimentos
+    nivel: minimo
+    url: https://articulo.mercadolibre.com.mx/MLM-3328599206-barras-de-granola-nature-valley-crunchy-miel-10-piezas-_JM
+    afiliado: ""
+    ml_id: MLM3328599206
+    ml_tipo: item
+    precio_ref: 51
+    rinde: 10
+    unidad: barras
+    consumo: {por_adulto: 3, por_nino: 3}
+    escala_raciones: true
+
+  - id: galletas-habaneras-4
+    nombre: Galletas Habaneras integrales, pack de 4
+    categoria: Agua y alimentos
+    nivel: minimo
+    url: https://www.mercadolibre.com.mx/p/MLM51716225
+    afiliado: ""
+    ml_id: MLM51716225
+    ml_tipo: producto
+    precio_ref: 53
+    rinde: 4
+    unidad: paquetes
+    consumo: {por_adulto: 1, por_nino: 1}
+    escala_raciones: true
+
+  - id: jugos-del-valle-24
+    nombre: Jugos Del Valle Junior 200 ml, caja de 24
+    categoria: Agua y alimentos
+    nivel: maximo
+    url: https://articulo.mercadolibre.com.mx/MLM-6274891882-del-valle-junior-100-jugo-multisabor-24200ml-_JM
+    afiliado: ""
+    ml_id: MLM6274891882
+    ml_tipo: item
+    precio_ref: 229
+    rinde: 24
+    unidad: jugos
+    consumo: {por_nino: 6}
+    solo_con_ninos: true
+    escala_raciones: true
+    nota: Un sabor conocido les da energía rápida y tranquilidad a los niños.
+
+  - id: trail-mix-5
+    nombre: Barras Nature Valley Trail Mix de frutos secos, 5 piezas
+    categoria: Agua y alimentos
+    nivel: maximo
+    url: https://www.mercadolibre.com.mx/p/MLM29233183
+    afiliado: ""
+    ml_id: MLM29233183
+    ml_tipo: producto
+    precio_ref: 50
+    rinde: 5
+    unidad: barras
+    consumo: {por_adulto: 2}
+    escala_raciones: true
+
+  # ---------- Luz y comunicación ----------
+  - id: lampara-frontal-jasu-2
+    nombre: Linterna frontal recargable Jasu, pack de 2
+    categoria: Luz y comunicación
+    nivel: minimo
+    url: https://www.mercadolibre.com.mx/p/MLM69559764
+    afiliado: ""
+    ml_id: MLM69559764
+    ml_tipo: producto
+    precio_ref: 79
+    rinde: 2
+    unidad: linternas
+    consumo: {por_adulto: 1}
+    nota: Deja las manos libres para cuidar a los niños. Cárgalas cada mes.
+
+  - id: radio-mtk
+    nombre: Radio portátil AM/FM MTK (2 pilas AA)
+    categoria: Luz y comunicación
+    nivel: minimo
+    url: https://www.mercadolibre.com.mx/p/MLM49033177
+    afiliado: ""
+    ml_id: MLM49033177
+    ml_tipo: producto
+    precio_ref: 161
+    rinde: 1
+    unidad: radio
+    consumo: {fijo: 1}
+    nota: Para escuchar avisos oficiales si se cae la señal del celular.
+
+  - id: pilas-aa-8
+    nombre: Pilas alcalinas AA 1hora, paquete de 8
+    categoria: Luz y comunicación
+    nivel: minimo
+    url: https://articulo.mercadolibre.com.mx/MLM-2333123325-paquete-8-pilas-1hora-aa-alcalinas-15v-larga-duracion-_JM
+    afiliado: ""
+    ml_id: MLM2333123325
+    ml_tipo: item
+    precio_ref: 44
+    rinde: 8
+    unidad: pilas
+    consumo: {fijo: 8}
+    nota: Guárdalas en una bolsa hermética.
+
+  # ---------- Abrigo y seguridad ----------
+  - id: silbatos-4
+    nombre: Silbatos de emergencia de aluminio, 4 piezas de colores
+    categoria: Abrigo y seguridad
+    nivel: minimo
+    url: https://www.mercadolibre.com.mx/p/MLM74178095
+    afiliado: ""
+    ml_id: MLM74178095
+    ml_tipo: producto
+    precio_ref: 73
+    rinde: 4
+    unidad: silbatos
+    consumo: {por_adulto: 1, por_nino: 1}
+    nota: Uno para cada integrante. Explica a los niños que solo se usa si se separan.
+
+  - id: mantas-termicas-10
+    nombre: Mantas térmicas de emergencia 130 x 210 cm, 10 piezas
+    categoria: Abrigo y seguridad
+    nivel: maximo
+    url: https://articulo.mercadolibre.com.mx/MLM-609852395-10-pz-manta-termica-130x210-camping-rescate-supervivencia-_JM
+    afiliado: ""
+    ml_id: MLM609852395
+    ml_tipo: item
+    precio_ref: 145
+    rinde: 10
+    unidad: mantas
+    consumo: {por_adulto: 1, por_nino: 1}
+
+  # ---------- Botiquín y salud ----------
+  - id: botiquin-14
+    nombre: Botiquín de primeros auxilios chico, 14 piezas
+    categoria: Botiquín y salud
+    nivel: minimo
+    url: https://articulo.mercadolibre.com.mx/MLM-5894624846-botiquin-de-primeros-auxilios-chico-14-pzas-escuela-oficina-_JM
+    afiliado: ""
+    ml_id: MLM5894624846
+    ml_tipo: item
+    precio_ref: 159
+    rinde: 1
+    unidad: botiquín
+    consumo: {fijo: 1}
+
+  - id: termometro-sacre
+    nombre: Termómetro digital Sacré Solutions
+    categoria: Botiquín y salud
+    nivel: maximo
+    url: https://www.mercadolibre.com.mx/p/MLM51560118
+    afiliado: ""
+    ml_id: MLM51560118
+    ml_tipo: producto
+    precio_ref: 65
+    rinde: 1
+    unidad: termómetro
+    consumo: {fijo: 1}
+
+  - id: ibuprofeno-infantil
+    nombre: Ibuprofeno infantil en jarabe Advil, 100 ml
+    categoria: Botiquín y salud
+    nivel: maximo
+    url: https://www.mercadolibre.com.mx/p/MLM39455412
+    afiliado: ""
+    ml_id: MLM39455412
+    ml_tipo: producto
+    precio_ref: 124
+    rinde: 1
+    unidad: frasco
+    consumo: {fijo: 1}
+    solo_con_ninos: true
+    nota: Consulta la dosis con el pediatra según la edad y el peso de cada niño.
+
+  # ---------- Higiene ----------
+  - id: gel-purell-236
+    nombre: Gel antibacterial Purell, 236 ml
+    categoria: Higiene
+    nivel: minimo
+    url: https://articulo.mercadolibre.com.mx/MLM-2467415429-gel-antibacterial-purell-aloe-vera-calmante-para-manos-236ml-aloe-_JM
+    afiliado: ""
+    ml_id: MLM2467415429
+    ml_tipo: item
+    precio_ref: 65
+    rinde: 1
+    unidad: botella
+    consumo: {fijo: 1}
+
+  - id: papel-maxima-4
+    nombre: Papel higiénico Maxima Premium, 4 rollos
+    categoria: Higiene
+    nivel: minimo
+    url: https://www.mercadolibre.com.mx/p/MLM63008699
+    afiliado: ""
+    ml_id: MLM63008699
+    ml_tipo: producto
+    precio_ref: 29
+    rinde: 4
+    unidad: rollos
+    consumo: {por_adulto: 1, por_nino: 1}
+
+  - id: bolsas-basura-28
+    nombre: Bolsas de basura con jareta 48 x 60 cm, 28 piezas
+    categoria: Higiene
+    nivel: minimo
+    url: https://articulo.mercadolibre.com.mx/MLM-928169600-28-bolsas-de-basura-medianas-basuritas-con-jareta-48x60-cm-_JM
+    afiliado: ""
+    ml_id: MLM928169600
+    ml_tipo: item
+    precio_ref: 49
+    rinde: 28
+    unidad: bolsas
+    consumo: {fijo: 10}
+
+  - id: toallitas-kleenbebe-120
+    nombre: Toallitas húmedas Kleenbebé, 120 piezas
+    categoria: Higiene
+    nivel: maximo
+    url: https://www.mercadolibre.com.mx/p/MLM19997807
+    afiliado: ""
+    ml_id: MLM19997807
+    ml_tipo: producto
+    precio_ref: 23
+    rinde: 120
+    unidad: toallitas
+    consumo: {por_adulto: 30, por_nino: 30}
+    nota: Sirven para asearse si se corta el agua.
+
+  # ---------- Documentos ----------
+  - id: ziploc-15
+    nombre: Bolsas Ziploc medianas, 15 piezas
+    categoria: Documentos
+    nivel: maximo
+    url: https://www.mercadolibre.com.mx/p/MLM18972412
+    afiliado: ""
+    ml_id: MLM18972412
+    ml_tipo: producto
+    precio_ref: 59
+    rinde: 15
+    unidad: bolsas
+    consumo: {fijo: 5}
+    nota: Para copias de actas, CURP, pólizas y escrituras; también para pilas y medicinas.
+
+  # ---------- Kit de calma ----------
+  - id: libros-colorear-10
+    nombre: 10 mini libros para colorear con crayolas
+    categoria: Kit de calma
+    nivel: plus
+    url: https://articulo.mercadolibre.com.mx/MLM-1431551047-10-mini-libro-colorear-crayola-nino-nina-pinata-fiesta-_JM
+    afiliado: ""
+    ml_id: MLM1431551047
+    ml_tipo: item
+    precio_ref: 148
+    rinde: 1
+    unidad: paquete
+    consumo: {fijo: 1}
+    solo_con_ninos: true
+    nota: Mantenerlos ocupados sin pantallas baja el estrés.
+
+  - id: uno-express
+    nombre: Juego de cartas UNO Express
+    categoria: Kit de calma
+    nivel: plus
+    url: https://www.mercadolibre.com.mx/p/MLM79649620
+    afiliado: ""
+    ml_id: MLM79649620
+    ml_tipo: producto
+    precio_ref: 62
+    rinde: 1
+    unidad: juego
+    consumo: {fijo: 1}
