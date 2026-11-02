@@ -54,14 +54,27 @@ def consultar(prod, token):
     """Devuelve (precio, disponible, titulo) o lanza excepción."""
     pid = prod["ml_id"]
     if prod.get("ml_tipo") == "producto":
-        d = http_json(f"{API}/products/{pid}", token)
-        bbw = d.get("buy_box_winner") or {}
-        precio = bbw.get("price")
-        disponible = bool(bbw) and d.get("status", "active") == "active"
-        return precio, disponible, d.get("name")
-    d = http_json(f"{API}/items/{pid}", token)
-    disponible = d.get("status") == "active" and (d.get("available_quantity") or 0) > 0
-    return d.get("price"), disponible, d.get("title")
+        try:
+            d = http_json(f"{API}/products/{pid}", token)
+            bbw = d.get("buy_box_winner") or {}
+            if bbw.get("price"):
+                return bbw.get("price"), d.get("status", "active") == "active", d.get("name")
+        except urllib.error.HTTPError:
+            pass
+        # Alternativa: publicaciones activas de ese producto de catálogo
+        d = http_json(f"{API}/products/{pid}/items", token)
+        res = d.get("results") or []
+        precios = [r.get("price") for r in res if r.get("price")]
+        return (min(precios) if precios else None), bool(precios), None
+    # Publicación normal: multiget, que es el recurso público recomendado
+    d = http_json(f"{API}/items?ids={pid}&attributes=id,price,status,available_quantity,title", token)
+    item = (d[0] if isinstance(d, list) and d else {})
+    if item.get("code") != 200:
+        raise urllib.error.HTTPError(f"{API}/items", item.get("code") or 0,
+                                     json.dumps(item.get("body"))[:150], None, None)
+    b = item["body"]
+    disponible = b.get("status") == "active" and (b.get("available_quantity") or 0) > 0
+    return b.get("price"), disponible, b.get("title")
 
 
 def main():
@@ -69,6 +82,7 @@ def main():
     cat = yaml.safe_load((RAIZ / "catalogo" / "productos.yaml").read_text(encoding="utf-8"))
     previos = json.loads(PRECIOS.read_text(encoding="utf-8")) if PRECIOS.exists() else {}
     token = obtener_token()
+    print("Token de Mercado Libre:", "obtenido" if token else "NO obtenido (se consulta sin token)")
     umbral = float(cfg.get("alerta_alza_pct", 25))
     ahora = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
@@ -85,7 +99,12 @@ def main():
             precio, disponible, titulo = consultar(p, token)
             consultados += 1
         except urllib.error.HTTPError as e:
-            errores.append(f"{p['id']}: HTTP {e.code}")
+            detalle = ""
+            try:
+                detalle = (e.read() or b"").decode()[:150] if e.fp else str(e.msg)[:150]
+            except Exception:  # noqa: BLE001
+                detalle = str(e.msg)[:150]
+            errores.append(f"{p['id']}: HTTP {e.code} {detalle}")
             continue
         except Exception as e:  # noqa: BLE001
             errores.append(f"{p['id']}: {e}")
@@ -102,7 +121,7 @@ def main():
     PRECIOS.write_text(json.dumps(nuevos, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # ---------- Reporte para el aviso de GitHub ----------
-    lineas = [f"Revisión automática del {ahora}. Productos consultados: {consultados}.", ""]
+    lineas = [f"Revisión automática del {ahora}. Productos consultados: {consultados}. Token: {'sí' if token else 'no'}.", ""]
     accion = False
     if agotados:
         accion = True
