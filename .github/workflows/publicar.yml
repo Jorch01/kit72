@@ -7,6 +7,11 @@ on:
     # Todos los días a las 7:17 de Cancún (12:17 UTC)
     - cron: "17 12 * * *"
   workflow_dispatch:
+    inputs:
+      codigo_ml:
+        description: "Código de autorización de Mercado Libre (TG-...). Solo la primera vez o al re-autorizar."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -37,7 +42,23 @@ jobs:
         env:
           ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          ML_REFRESH_TOKEN: ${{ secrets.ML_REFRESH_TOKEN }}
+          ML_AUTH_CODE: ${{ inputs.codigo_ml }}
         run: python scripts/actualizar_precios.py
+
+      - name: Guardar la autorización renovada de Mercado Libre
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          ARCHIVO="$RUNNER_TEMP/ml_refresh_token"
+          if [ ! -s "$ARCHIVO" ]; then echo "Sin autorización nueva que guardar."; exit 0; fi
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::Falta el Secret GH_PAT; no se pudo guardar la autorización renovada."
+          else
+            gh secret set ML_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY" < "$ARCHIVO" && echo "Autorización renovada y guardada."
+          fi
+          rm -f "$ARCHIVO"
 
       - name: Guardar precios en el repo
         run: |
