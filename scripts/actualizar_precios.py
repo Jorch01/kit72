@@ -116,15 +116,27 @@ def consultar(prod, token):
         res = d.get("results") or []
         precios = [r.get("price") for r in res if r.get("price")]
         return (min(precios) if precios else None), bool(precios), None
-    # Publicación normal: multiget, que es el recurso público recomendado
-    d = http_json(f"{API}/items?ids={pid}&attributes=id,price,status,available_quantity,title", token)
-    item = (d[0] if isinstance(d, list) and d else {})
-    if item.get("code") != 200:
-        raise urllib.error.HTTPError(f"{API}/items", item.get("code") or 0,
-                                     json.dumps(item.get("body"))[:150], None, None)
-    b = item["body"]
-    disponible = b.get("status") == "active" and (b.get("available_quantity") or 0) > 0
-    return b.get("price"), disponible, b.get("title")
+    # Publicación normal: primero multiget; si Mercado Libre lo bloquea, el recurso de precios
+    try:
+        d = http_json(f"{API}/items?ids={pid}&attributes=id,price,status,available_quantity,title", token)
+        item = (d[0] if isinstance(d, list) and d else {})
+        if item.get("code") == 200:
+            b = item["body"]
+            disponible = b.get("status") == "active" and (b.get("available_quantity") or 0) > 0
+            return b.get("price"), disponible, b.get("title")
+    except urllib.error.HTTPError:
+        pass
+    try:
+        d = http_json(f"{API}/items/{pid}/sale_price?context=channel_marketplace", token)
+        if d.get("amount"):
+            return d["amount"], True, None
+    except urllib.error.HTTPError:
+        pass
+    d = http_json(f"{API}/items/{pid}/prices", token)
+    precios = [x.get("amount") for x in (d.get("prices") or []) if x.get("amount")]
+    if not precios:
+        raise urllib.error.HTTPError(f"{API}/items/{pid}/prices", 404, "sin precio", None, None)
+    return min(precios), True, None
 
 
 def main():
