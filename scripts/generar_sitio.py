@@ -131,11 +131,22 @@ def pagina(titulo, descripcion, cuerpo, camino, jsonld=None, extra_head=""):
 </main>
 <footer class="pie">
   <p><strong>{escape(CFG['nombre'])}</strong> · {escape(CFG['eslogan'])}</p>
+  {redes_html()}
   <p class="aviso">Los botones "Ver en Mercado Libre" son ligas de afiliado: si compras, recibimos una comisión sin costo extra para ti. Los precios se revisan a diario y pueden cambiar; el precio final es el que muestra Mercado Libre. <a href="{ruta('aviso-afiliados/')}">Más información</a> · <a href="{ruta('privacidad/')}">Privacidad</a></p>
 </footer>
 </body>
 </html>
 """
+
+
+def redes_html():
+    redes = CFG.get("redes") or {}
+    if not redes:
+        return ""
+    nombres = {"tiktok": "TikTok", "youtube": "YouTube", "instagram": "Instagram", "facebook": "Facebook"}
+    ligas = " · ".join(f'<a href="{escape(u)}" rel="me noopener" target="_blank">{nombres.get(k, k.title())}</a>'
+                       for k, u in redes.items() if u)
+    return f'<p class="redes">Síguenos en {ligas}</p>'
 
 
 def migas(*pares):
@@ -195,6 +206,17 @@ def escribir(camino, contenido):
     destino.write_text(contenido, encoding="utf-8")
 
 
+def video_html():
+    v = CFG.get("video_destacado")
+    if not v:
+        return ""
+    return f"""<section class="video">
+  <h2>¿Por qué tantos gobiernos piden armar un kit?</h2>
+  <p>En 60 segundos: qué recomiendan la Unión Europea, Reino Unido, Japón, Suecia, Noruega y Alemania, y qué lleva un kit básico.</p>
+  <a class="btn-sec" href="{escape(v)}" target="_blank" rel="noopener">Ver el video en TikTok</a>
+</section>"""
+
+
 def pagina_inicio():
     fam = CFG["familia_default"]
     tarjetas = []
@@ -240,6 +262,7 @@ def pagina_inicio():
   <div class="rejilla">{''.join(tarjetas)}</div>
 </section>
 
+{video_html()}
 <section class="guias">
   <h2>Guías por tipo de emergencia</h2>
   {guias}
@@ -248,7 +271,10 @@ def pagina_inicio():
 <script src="{ruta('assets/calculadora.js')}"></script>
 """
     ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": CFG["nombre"],
-           "url": f"{URL}/", "inLanguage": "es-MX", "description": CFG["eslogan"]}]
+           "url": f"{URL}/", "inLanguage": "es-MX", "description": CFG["eslogan"]},
+          {"@context": "https://schema.org", "@type": "Organization", "name": CFG["nombre"],
+           "url": f"{URL}/", "logo": f"{URL}/assets/logo.png",
+           "sameAs": [u for u in (CFG.get("redes") or {}).values() if u]}]
     escribir("", pagina(f"{CFG['nombre']} · Kit de emergencia 72 horas para tu familia",
                         "Calcula y arma tu kit de emergencia de 72 horas para huracán, sismo o inundación con los productos más baratos de Mercado Libre.",
                         cuerpo, "", ld))
