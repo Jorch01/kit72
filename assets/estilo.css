@@ -110,3 +110,7 @@ h2 { font-size: 1.45rem; margin: 1.8em 0 .5em; }
 /* Aviso de autorización de Mercado Libre (solo lo ve el dueño del sitio) */
 .aviso-codigo { background: #fff4ec; border-bottom: 3px solid var(--naranja); padding: 14px 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .aviso-codigo code { background: #fff; border: 1px solid var(--linea); padding: 6px 10px; border-radius: 8px; font-size: 1rem; word-break: break-all; }
+
+.pie .redes a { font-weight: 700; }
+.video { background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 18px; margin-top: 28px; }
+.video h2 { margin-top: .2em; }
