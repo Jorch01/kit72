@@ -149,6 +149,7 @@ def main():
     ahora = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     nuevos, agotados, alzas, errores, sin_liga = dict(previos), [], [], [], []
+    manuales = []
     consultados = 0
     for p in cat["productos"]:
         if p.get("compra_local"):
@@ -156,6 +157,11 @@ def main():
         if not p.get("afiliado") and not p.get("sin_comision"):
             sin_liga.append(p)
         if not p.get("ml_id"):
+            continue
+        if p.get("ml_tipo") != "producto":
+            # Mercado Libre no permite consultar publicaciones sueltas de otros vendedores;
+            # solo los productos de catálogo (/p/MLM...). Estas quedan con precio de referencia.
+            manuales.append(p)
             continue
         try:
             precio, disponible, titulo = consultar(p, token)
@@ -206,6 +212,12 @@ def main():
         lineas.append("```")
         lineas += [p["url"] for p in sin_liga if p.get("url")]
         lineas.append("```")
+        lineas.append("")
+    if manuales:
+        lineas.append("## Con precio de referencia (sin revisión automática)")
+        lineas.append("Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). "
+                      "Si encuentras la versión de catálogo de alguno, cámbialo y quedará automático:")
+        lineas += [f"- {p['nombre']}" for p in manuales]
         lineas.append("")
     if AVISOS_TOKEN and not consultados:
         accion = True
