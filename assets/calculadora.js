@@ -1,5 +1,23 @@
 // Calculadora y carrito guiado de Kit72. La lógica de cantidades es la misma que
 // calcular() en scripts/generar_sitio.py (mantenerlas iguales).
+// Si Mercado Libre regresa aquí después de autorizar la app, muestra el código para copiarlo.
+(function () {
+  let codigo = null;
+  try { codigo = new URLSearchParams(location.search).get("code"); } catch (e) { return; }
+  if (!codigo || !/^TG-/.test(codigo)) return;
+  const caja = document.createElement("div");
+  caja.className = "aviso-codigo";
+  caja.innerHTML = '<strong>Autorización recibida.</strong> Copia este código y pégalo en GitHub en los próximos minutos ' +
+    '(Actions → Actualizar precios y publicar → Run workflow → campo del código):' +
+    '<code id="codigo-ml"></code><button type="button" class="btn" id="copiar-codigo">Copiar código</button>';
+  document.body.prepend(caja);
+  document.getElementById("codigo-ml").textContent = codigo;
+  document.getElementById("copiar-codigo").addEventListener("click", function () {
+    try { navigator.clipboard.writeText(codigo); this.textContent = "Copiado ✓"; } catch (e) { /* copia manual */ }
+  });
+  try { history.replaceState(null, "", location.pathname); } catch (e) { /* sin cambios */ }
+})();
+
 (function () {
   const D = window.KIT72;
   const $ = (id) => document.getElementById(id);
