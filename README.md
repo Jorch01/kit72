@@ -17,8 +17,21 @@ Se publica gratis en GitHub Pages: **https://jorch01.github.io/kit72/**
 3. **Permisos del robot:** Settings → Actions → General → Workflow permissions → **Read and write permissions**.
 4. **Primera publicación:** pestaña Actions → "Actualizar precios y publicar" → **Run workflow**. En unos 2 minutos el sitio queda en https://jorch01.github.io/kit72/
 5. **Ligas de afiliado:** abre el aviso que crea el robot, copia la lista de URLs, pégala completa en el [Generador de links](https://www.mercadolibre.com.mx/afiliados/linkbuilder) y pon cada liga en el campo `afiliado` del producto.
-6. **Precios en automático (recomendado):** registra una app gratuita en https://developers.mercadolibre.com.mx y guarda `ML_CLIENT_ID` y `ML_CLIENT_SECRET` en Settings → Secrets and variables → Actions. Sin esto el sitio funciona con los precios de referencia del catálogo.
+6. **Precios en automático:** ver la sección "Precios automáticos" más abajo. Sin esto el sitio funciona con los precios de referencia del catálogo.
 7. **Google:** da de alta el sitio en Google Search Console y envía `https://jorch01.github.io/kit72/sitemap.xml`.
+
+## Precios automáticos
+
+Mercado Libre solo deja consultar precios con la autorización de una cuenta real. Se configura una vez:
+
+1. Secrets `ML_CLIENT_ID` y `ML_CLIENT_SECRET` con los datos de la app Kit72 (developers.mercadolibre.com.mx → Mis aplicaciones).
+2. Secret `GH_PAT`: en GitHub → foto de perfil → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token. Repository access: solo `kit72`. Permissions → Repository → **Secrets: Read and write**. Copia el token y guárdalo como Secret `GH_PAT` en el repo. Sirve para que el robot guarde la autorización renovada (Mercado Libre la cambia cada vez que se usa).
+3. Autoriza la app entrando a:
+   https://auth.mercadolibre.com.mx/authorization?response_type=code&client_id=1324245128783915&redirect_uri=https://jorch01.github.io/kit72/
+   Da "Permitir". Te regresa al sitio con un aviso y el código `TG-...`; cópialo.
+4. En los siguientes minutos: Actions → "Actualizar precios y publicar" → Run workflow → pega el código en el campo → Run workflow.
+
+Si algún día el aviso del robot dice que la autorización caducó, repite los pasos 3 y 4.
 
 ## Tu rutina
 
