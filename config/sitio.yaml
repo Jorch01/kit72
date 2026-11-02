@@ -20,6 +20,12 @@ listas:
   maximo: https://meli.la/164Gdpw
   plus: https://meli.la/2dBWU3Q
 
+# Redes sociales de la marca (aparecen en el pie y se le indican a Google)
+redes:
+  tiktok: https://www.tiktok.com/@jorchcm0
+# Video destacado en la portada
+video_destacado: https://www.tiktok.com/@jorchcm0/video/7703392278081031445
+
 # Si un precio sube más de este porcentaje frente al último registrado, se abre un aviso
 alerta_alza_pct: 25
 
