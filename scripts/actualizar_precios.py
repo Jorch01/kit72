@@ -37,17 +37,67 @@ def http_json(url, token=None, data=None):
         return json.loads(r.read().decode())
 
 
+REDIRECT_URI = "https://jorch01.github.io/kit72/"
+AVISOS_TOKEN = []
+
+
+def ocultar(valor):
+    """Evita que GitHub muestre el valor en los registros."""
+    if valor and os.environ.get("GITHUB_ACTIONS"):
+        print(f"::add-mask::{valor}")
+
+
+def guardar_refresh(nuevo):
+    """Deja el nuevo refresh token en un archivo temporal (fuera del repo) para
+    que el workflow lo guarde como Secret. Mercado Libre lo cambia en cada uso."""
+    destino = os.environ.get("RUNNER_TEMP")
+    if not destino or not nuevo:
+        return
+    Path(destino, "ml_refresh_token").write_text(nuevo, encoding="utf-8")
+
+
+def pedir_token(datos):
+    try:
+        r = http_json(f"{API}/oauth/token", data=datos)
+    except urllib.error.HTTPError as e:
+        cuerpo = ""
+        try:
+            cuerpo = e.read().decode()[:200]
+        except Exception:  # noqa: BLE001
+            pass
+        AVISOS_TOKEN.append(f"Mercado Libre rechazó la autorización ({datos['grant_type']}): HTTP {e.code} {cuerpo}")
+        return None
+    except Exception as e:  # noqa: BLE001
+        AVISOS_TOKEN.append(f"No se pudo pedir el token ({datos['grant_type']}): {e}")
+        return None
+    ocultar(r.get("access_token"))
+    ocultar(r.get("refresh_token"))
+    guardar_refresh(r.get("refresh_token"))
+    return r.get("access_token")
+
+
 def obtener_token():
+    """Prioridad: código de autorización recién dado > refresh token guardado > token de la app."""
     cid, secret = os.environ.get("ML_CLIENT_ID"), os.environ.get("ML_CLIENT_SECRET")
     if not (cid and secret):
         return None
-    try:
-        r = http_json(f"{API}/oauth/token", data={
-            "grant_type": "client_credentials", "client_id": cid, "client_secret": secret})
-        return r.get("access_token")
-    except Exception as e:  # noqa: BLE001
-        print(f"[aviso] No se obtuvo token de ML: {e}")
-        return None
+    base = {"client_id": cid, "client_secret": secret}
+    codigo = (os.environ.get("ML_AUTH_CODE") or "").strip()
+    if codigo:
+        ocultar(codigo)
+        token = pedir_token({**base, "grant_type": "authorization_code", "code": codigo,
+                             "redirect_uri": REDIRECT_URI})
+        if token:
+            print("Autorización de la cuenta registrada correctamente.")
+            return token
+    refresh = (os.environ.get("ML_REFRESH_TOKEN") or "").strip()
+    if refresh:
+        ocultar(refresh)
+        token = pedir_token({**base, "grant_type": "refresh_token", "refresh_token": refresh})
+        if token:
+            return token
+        AVISOS_TOKEN.append("La autorización de tu cuenta caducó o no se guardó: vuelve a autorizar la app (ver README).")
+    return pedir_token({**base, "grant_type": "client_credentials"})
 
 
 def consultar(prod, token):
@@ -145,9 +195,14 @@ def main():
         lineas += [p["url"] for p in sin_liga if p.get("url")]
         lineas.append("```")
         lineas.append("")
+    if AVISOS_TOKEN and not consultados:
+        accion = True
+        lineas.append("## Problema con la autorización de Mercado Libre")
+        lineas += [f"- {a}" for a in AVISOS_TOKEN]
+        lineas.append("")
     if errores:
         lineas.append("## No se pudieron consultar")
-        lineas.append("Si son todos, revisa los Secrets ML_CLIENT_ID y ML_CLIENT_SECRET.")
+        lineas.append("Si son todos, revisa la autorización de la app (sección «Precios automáticos» del README).")
         lineas += [f"- {e}" for e in errores]
         lineas.append("")
     if not accion and not errores:
