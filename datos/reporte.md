@@ -1,7 +1,4 @@
-Revisión automática del 2026-11-02 21:47 UTC. Productos consultados: 12. Token: sí.
-
-## Subieron más de 25%
-- **Galletas Habaneras integrales, pack de 4**: $53 → $68
+Revisión automática del 2026-11-03 19:36 UTC. Productos consultados: 11. Token: sí.
 
 ## Con precio de referencia (sin revisión automática)
 Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si encuentras la versión de catálogo de alguno, cámbialo y quedará automático:
@@ -13,3 +10,7 @@ Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si enc
 - Gel antibacterial Purell, 236 ml
 - Bolsas de basura con jareta 48 x 60 cm, 28 piezas
 - 10 mini libros para colorear con crayolas
+
+## No se pudieron consultar
+Si son todos, revisa la autorización de la app (sección «Precios automáticos» del README).
+- radio-mtk: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
