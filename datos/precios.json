@@ -3,31 +3,31 @@
     "precio": 145,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   },
   "galletas-habaneras-4": {
     "precio": 68,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   },
   "trail-mix-5": {
     "precio": 50,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   },
   "lampara-frontal-jasu-2": {
     "precio": 79,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   },
   "radio-mtk": {
-    "precio": 171.59,
+    "precio": 195.45,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-02 21:47 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   },
   "silbatos-4": {
     "precio": 72.98,
@@ -36,16 +36,16 @@
     "actualizado": "2026-11-03 19:36 UTC"
   },
   "termometro-sacre": {
-    "precio": 64.89,
+    "precio": 65.55,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   },
   "ibuprofeno-infantil": {
     "precio": 124,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   },
   "papel-maxima-4": {
     "precio": 34.9,
@@ -57,18 +57,18 @@
     "precio": 23,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   },
   "ziploc-15": {
     "precio": 59,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   },
   "uno-express": {
     "precio": 62,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-04 19:52 UTC"
   }
 }
