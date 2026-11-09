@@ -1,4 +1,4 @@
-Revisión automática del 2026-11-08 17:58 UTC. Productos consultados: 9. Token: sí.
+Revisión automática del 2026-11-09 22:29 UTC. Productos consultados: 8. Token: sí.
 
 ## Con precio de referencia (sin revisión automática)
 Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si encuentras la versión de catálogo de alguno, cámbialo y quedará automático:
@@ -16,3 +16,4 @@ Si son todos, revisa la autorización de la app (sección «Precios automáticos
 - lampara-frontal-jasu-2: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
 - silbatos-4: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
 - papel-maxima-4: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
+- uno-express: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
