@@ -3,19 +3,19 @@
     "precio": 145,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-09 22:29 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   },
   "galletas-habaneras-4": {
     "precio": 64.2,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-09 22:29 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   },
   "trail-mix-5": {
-    "precio": 52,
+    "precio": 55.13,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-09 22:29 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   },
   "lampara-frontal-jasu-2": {
     "precio": 79,
@@ -24,10 +24,10 @@
     "actualizado": "2026-11-07 17:46 UTC"
   },
   "radio-mtk": {
-    "precio": 195.56,
+    "precio": 194.72,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-09 22:29 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   },
   "silbatos-4": {
     "precio": 72.98,
@@ -39,36 +39,36 @@
     "precio": 65.55,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-09 22:29 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   },
   "ibuprofeno-infantil": {
     "precio": 124,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-09 22:29 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   },
   "papel-maxima-4": {
     "precio": 34.9,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-03 19:36 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   },
   "toallitas-kleenbebe-120": {
     "precio": 21,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-09 22:29 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   },
   "ziploc-15": {
     "precio": 54.8,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-09 22:29 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   },
   "uno-express": {
-    "precio": 69,
+    "precio": 249,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-08 17:58 UTC"
+    "actualizado": "2026-11-10 19:51 UTC"
   }
 }

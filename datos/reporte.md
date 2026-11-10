@@ -1,4 +1,7 @@
-Revisión automática del 2026-11-09 22:29 UTC. Productos consultados: 8. Token: sí.
+Revisión automática del 2026-11-10 19:51 UTC. Productos consultados: 10. Token: sí.
+
+## Subieron más de 25%
+- **Juego de cartas UNO Express**: $69 → $249
 
 ## Con precio de referencia (sin revisión automática)
 Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si encuentras la versión de catálogo de alguno, cámbialo y quedará automático:
@@ -15,5 +18,3 @@ Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si enc
 Si son todos, revisa la autorización de la app (sección «Precios automáticos» del README).
 - lampara-frontal-jasu-2: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
 - silbatos-4: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
-- papel-maxima-4: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
-- uno-express: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
