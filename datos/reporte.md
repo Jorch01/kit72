@@ -1,4 +1,4 @@
-Revisión automática del 2026-11-11 19:42 UTC. Productos consultados: 11. Token: sí.
+Revisión automática del 2026-11-12 20:05 UTC. Productos consultados: 11. Token: sí.
 
 ## Con precio de referencia (sin revisión automática)
 Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si encuentras la versión de catálogo de alguno, cámbialo y quedará automático:
