@@ -3,19 +3,19 @@
     "precio": 169,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   },
   "galletas-habaneras-4": {
     "precio": 51,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   },
   "trail-mix-5": {
     "precio": 55.13,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   },
   "lampara-frontal-jasu-2": {
     "precio": 89,
@@ -27,7 +27,7 @@
     "precio": 198.38,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   },
   "silbatos-4": {
     "precio": 72.98,
@@ -39,36 +39,36 @@
     "precio": 63.58,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   },
   "ibuprofeno-infantil": {
-    "precio": 124,
+    "precio": 110.78,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   },
   "papel-maxima-4": {
-    "precio": 34.9,
+    "precio": 29,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   },
   "toallitas-kleenbebe-120": {
     "precio": 24,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   },
   "ziploc-15": {
     "precio": 59,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   },
   "uno-express": {
     "precio": 249,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-14 18:15 UTC"
+    "actualizado": "2026-11-15 18:57 UTC"
   }
 }
