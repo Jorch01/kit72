@@ -3,19 +3,19 @@
     "precio": 179,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   },
   "galletas-habaneras-4": {
-    "precio": 38.99,
+    "precio": 69,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   },
   "trail-mix-5": {
     "precio": 55.13,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   },
   "lampara-frontal-jasu-2": {
     "precio": 89,
@@ -24,10 +24,10 @@
     "actualizado": "2026-11-14 18:15 UTC"
   },
   "radio-mtk": {
-    "precio": 197.21,
+    "precio": 267.06,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   },
   "silbatos-4": {
     "precio": 72.98,
@@ -39,36 +39,36 @@
     "precio": 63.58,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   },
   "ibuprofeno-infantil": {
-    "precio": 106.38,
+    "precio": 124,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   },
   "papel-maxima-4": {
     "precio": 29,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   },
   "toallitas-kleenbebe-120": {
-    "precio": 21,
+    "precio": 24,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   },
   "ziploc-15": {
     "precio": 59,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   },
   "uno-express": {
     "precio": 249,
     "disponible": true,
     "titulo_ml": null,
-    "actualizado": "2026-11-17 21:03 UTC"
+    "actualizado": "2026-11-18 20:40 UTC"
   }
 }
