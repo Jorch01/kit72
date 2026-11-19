@@ -1,8 +1,4 @@
-Revisión automática del 2026-11-18 20:40 UTC. Productos consultados: 10. Token: sí.
-
-## Subieron más de 25%
-- **Galletas Habaneras integrales, pack de 4**: $39 → $69
-- **Radio portátil AM/FM MTK (2 pilas AA)**: $197 → $267
+Revisión automática del 2026-11-19 20:46 UTC. Productos consultados: 10. Token: sí.
 
 ## Con precio de referencia (sin revisión automática)
 Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si encuentras la versión de catálogo de alguno, cámbialo y quedará automático:
