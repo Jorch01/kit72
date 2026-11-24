@@ -1,4 +1,4 @@
-Revisión automática del 2026-11-22 19:49 UTC. Productos consultados: 10. Token: sí.
+Revisión automática del 2026-11-24 00:01 UTC. Productos consultados: 0. Token: sí.
 
 ## Con precio de referencia (sin revisión automática)
 Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si encuentras la versión de catálogo de alguno, cámbialo y quedará automático:
@@ -13,5 +13,27 @@ Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si enc
 
 ## No se pudieron consultar
 Si son todos, revisa la autorización de la app (sección «Precios automáticos» del README).
-- lampara-frontal-jasu-2: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
-- silbatos-4: HTTP 404 {"message": "No winners found","error": "not_found","status": 404,"cause": []}
+- atun-tuny-8: HTTP 403 {"blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","status":403,"message":"At least one policy returned UNAUTHORIZED."}
+
+- galletas-habaneras-4: HTTP 403 {"message":"At least one policy returned UNAUTHORIZED.","status":403,"blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
+
+- trail-mix-5: HTTP 403 {"blocked_by":"PolicyAgent","status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED."}
+
+- lampara-frontal-jasu-2: HTTP 403 {"blocked_by":"PolicyAgent","status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED."}
+
+- radio-mtk: HTTP 403 {"blocked_by":"PolicyAgent","status":403,"message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
+
+- silbatos-4: HTTP 403 {"blocked_by":"PolicyAgent","status":403,"message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
+
+- termometro-sacre: HTTP 403 {"blocked_by":"PolicyAgent","message":"At least one policy returned UNAUTHORIZED.","status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
+
+- ibuprofeno-infantil: HTTP 403 {"blocked_by":"PolicyAgent","message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","status":403}
+
+- papel-maxima-4: HTTP 403 {"message":"At least one policy returned UNAUTHORIZED.","blocked_by":"PolicyAgent","status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
+
+- toallitas-kleenbebe-120: HTTP 403 {"status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","blocked_by":"PolicyAgent","message":"At least one policy returned UNAUTHORIZED."}
+
+- ziploc-15: HTTP 403 {"blocked_by":"PolicyAgent","message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","status":403}
+
+- uno-express: HTTP 403 {"message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","blocked_by":"PolicyAgent","status":403}
+
