@@ -1,4 +1,4 @@
-Revisión automática del 2026-11-26 21:42 UTC. Productos consultados: 0. Token: sí.
+Revisión automática del 2026-11-27 21:26 UTC. Productos consultados: 0. Token: sí.
 
 ## Con precio de referencia (sin revisión automática)
 Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si encuentras la versión de catálogo de alguno, cámbialo y quedará automático:
@@ -13,27 +13,27 @@ Mercado Libre solo deja revisar productos de catálogo (ligas /p/MLM...). Si enc
 
 ## No se pudieron consultar
 Si son todos, revisa la autorización de la app (sección «Precios automáticos» del README).
-- atun-tuny-8: HTTP 403 {"blocked_by":"PolicyAgent","status":403,"message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
+- atun-tuny-8: HTTP 403 {"blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","status":403,"message":"At least one policy returned UNAUTHORIZED."}
 
-- galletas-habaneras-4: HTTP 403 {"status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","blocked_by":"PolicyAgent","message":"At least one policy returned UNAUTHORIZED."}
+- galletas-habaneras-4: HTTP 403 {"status":403,"blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED."}
 
-- trail-mix-5: HTTP 403 {"blocked_by":"PolicyAgent","status":403,"message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
+- trail-mix-5: HTTP 403 {"message":"At least one policy returned UNAUTHORIZED.","blocked_by":"PolicyAgent","status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
 
-- lampara-frontal-jasu-2: HTTP 403 {"status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED.","blocked_by":"PolicyAgent"}
+- lampara-frontal-jasu-2: HTTP 403 {"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","status":403,"message":"At least one policy returned UNAUTHORIZED.","blocked_by":"PolicyAgent"}
 
-- radio-mtk: HTTP 403 {"status":403,"message":"At least one policy returned UNAUTHORIZED.","blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
+- radio-mtk: HTTP 403 {"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","blocked_by":"PolicyAgent","message":"At least one policy returned UNAUTHORIZED.","status":403}
 
-- silbatos-4: HTTP 403 {"blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED.","status":403}
+- silbatos-4: HTTP 403 {"message":"At least one policy returned UNAUTHORIZED.","status":403,"blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
 
 - termometro-sacre: HTTP 403 {"blocked_by":"PolicyAgent","message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","status":403}
 
-- ibuprofeno-infantil: HTTP 403 {"message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","blocked_by":"PolicyAgent","status":403}
+- ibuprofeno-infantil: HTTP 403 {"message":"At least one policy returned UNAUTHORIZED.","blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","status":403}
 
-- papel-maxima-4: HTTP 403 {"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED.","blocked_by":"PolicyAgent","status":403}
+- papel-maxima-4: HTTP 403 {"blocked_by":"PolicyAgent","status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED."}
 
-- toallitas-kleenbebe-120: HTTP 403 {"blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED.","status":403}
+- toallitas-kleenbebe-120: HTTP 403 {"status":403,"code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED.","blocked_by":"PolicyAgent"}
 
-- ziploc-15: HTTP 403 {"message":"At least one policy returned UNAUTHORIZED.","status":403,"blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES"}
+- ziploc-15: HTTP 403 {"status":403,"message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","blocked_by":"PolicyAgent"}
 
-- uno-express: HTTP 403 {"status":403,"message":"At least one policy returned UNAUTHORIZED.","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","blocked_by":"PolicyAgent"}
+- uno-express: HTTP 403 {"blocked_by":"PolicyAgent","code":"PA_UNAUTHORIZED_RESULT_FROM_POLICIES","message":"At least one policy returned UNAUTHORIZED.","status":403}
 
